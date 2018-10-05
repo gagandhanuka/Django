@@ -1,0 +1,70 @@
+<html>
+    <head>
+       <title> Employee</title>
+       <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <style>
+        .clear{margin:18px 0 0 0;}
+        </style>
+    </head>
+    <body >
+          
+            <div class="jumbotron text-center" style="background-color:#00F3FF">
+                    <h1 class="text-white" style="font-weight: 600">Welcome to login page</h1>
+                    <p class="text-white"style="font-weight: 600">Fill your credidentials and click on login button</p> 
+                  </div>
+                <div id="id1">
+                  <div class="form-group">
+                      <div class="container-fluid">
+                          <div class="row">
+                              <div class="col-lg-4">
+        <label>Username</label><input type="text" class="form-control"placeholder="Username" id="user"></div></div></div></div>
+        <div class="form-group">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4">
+        <label>Password</label><input type="password" class="form-control"placeholder="Password" id="pass"></div></div></div></div>
+        <div class="container-fluid">
+        <button class="btn btn-info"onclick="checkdata()">Login</button></div></div>
+        <div class="clear"></div>
+        <div class="container-fluid">
+           <table width=100% >
+               <tr><td align="center">
+        <form action="insert" method="POST">
+                {% csrf_token %} 
+            <button class="btn btn-info"id="b1"style="visibility:hidden">Insert</button></form></td><td align="center">
+        <form action="delete" method="POST">
+                {% csrf_token %}    
+            <button id="b2" class="btn btn-info"style="visibility:hidden">Delete</button></form></td><td align="center">
+        <form action="update" method="POST">
+                {% csrf_token %}
+            <button id="b3" class="btn btn-info"style="visibility:hidden">Update</button></form></td><td align="center">
+        <form action="show" method="POST">
+                {% csrf_token %}
+            <button id="b4" class="btn btn-info"style="visibility:hidden">Show</button></form></td><td align="center">
+                    <form action="search" method="POST">
+                            {% csrf_token %}
+            <button id="b5" class="btn btn-info"style="visibility:hidden">Search</button></form></td></tr></table></div>
+        <script>
+            function checkdata()
+            {
+                if(document.getElementById("user").value=="admin"&&document.getElementById("pass").value=="123456")
+                {
+                    document.getElementById("id1").style.visibility="hidden";
+                    document.getElementById("b1").style.visibility="visible";
+                    document.getElementById("b2").style.visibility="visible";
+                    document.getElementById("b3").style.visibility="visible";
+                    document.getElementById("b4").style.visibility="visible";
+                    document.getElementById("b5").style.visibility="visible";
+                    {request.session["username"]="admin"}
+                }
+                else{
+                    alert("You have entered wrong password")
+                }
+            }
+            </Script>
+    </body>

@@ -1,0 +1,14 @@
+<html>
+    <head><title>Sample HTML page</title></head>
+    <body>
+        <form action=""method="POST">
+                {% csrf_token %}
+            <table>
+              <tr><td>Empid:<input name="empid"></td></tr>
+              <tr><td>Ename:<input name="ename"></td></tr>
+              <tr><td>Salary:<input name="basic"></td></tr>
+              <tr><td><button type="submit">Submit</button></td></tr>
+            </table>
+        </form>
+    </body>
+</html>
