@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Signup-Restaurant</title>
+        <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+   <style>
+         .clear{margin:18px 0 0 0;}
+         </style>
+     </head>
+     <table class="table table-hover " border="2" style="border-collapse: collapse">
+            <tr class="table-info "><th>Location id</th>
+                <th>Branch Name</th>
+                <th>Area</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Pin</th>
+                <th>Type</th>
+                <th>Location View</th>
+            </tr>
+            {% for i in locations %}
+                    <td>{{i.lid}}</td>  
+                    <td>{{i.branch_name}}</td>
+                    <td>{{i.area}}</td>
+                    <td>{{i.city}}</td>
+                    <td>{{i.state}}</td>
+                    <td>{{i.country}}</td>
+                    <td>{{i.pin}}</td>
+                    <td>{{i.rest_type}}</td>
+                    <td>{% load static %} <img src="{% static 'b.jpg' %}" width=100px height=100px/></td>
+                </tr>
+            {%endfor%}
+</body>
+</html>

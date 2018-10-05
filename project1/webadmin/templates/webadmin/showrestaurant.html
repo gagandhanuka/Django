@@ -1,0 +1,40 @@
+<html>
+        <head>
+                <title> Employee</title>
+                <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+           <style>
+                 .clear{margin:18px 0 0 0;}
+                 </style>
+             </head>
+             <body>
+                    <table class="table table-hover " border="2" style="border-collapse: collapse">
+                            <tr class="table-info "><th>Restaurant id</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Phone no.</th>
+                                <th>Password</th>
+                                <th>Verified</th>
+                                <th>Owner</th>
+                            </tr>
+                            {% for i in restaurants %}
+                                    <td>{{i.Rid}}</td>  
+                                    <td>{{i.username}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.phn_no}}</td>
+                                    <td>{{i.password}}</td>
+                                    {% ifequal i.verified 1 %}
+                                        <td class="text-success">Verified</td>
+                                    {%endifequal%}
+                                    {% ifequal i.verified 0 %}
+                                        <td class="text-danger">Not Verified</td>
+                                    {%endifequal%}
+                                    <td>{{i.owner}}</td>
+                                </tr>
+                            {%endfor%}
+             </body>
+</html>

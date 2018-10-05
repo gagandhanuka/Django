@@ -1,0 +1,34 @@
+<html>
+        <head>
+                <title>Signup-Restaurant</title>
+                <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+           <style>
+                 .clear{margin:18px 0 0 0;}
+                 </style>
+        </head>
+    <body>
+        <form action="createloc/" method="POST" enctype="multipart/form-data">{%csrf_token%}
+        <p><label for="branch_name">Branch Name:</label>
+        <input placeholder="Branch Name"name="branch_name" id="branch_name"></p>
+        <p><label for="area">Area:</label>
+        <input placeholder="Area"name="area" id="area"></p>
+        <p><label for="city">City:</label>
+        <input placeholder="City"name="city" id="city"></p>
+        <p><label for="state">State:</label>
+        <input placeholder="State"name="state" id="state"></p>
+        <p><label for="country">Contry:</label>
+        <input placeholder="Country"name="country" id="country"></p>
+        <p><label for="pin">Pin:</label>
+        <input placeholder="Pin"name="pin" id="pin"></p>
+        <p><label for="rest_type">Type:</label>
+        <input placeholder="Veg/Non-Veg/Both"name="rest_type" id="rest_type"></p>
+        <p><label for="photo">Photo:</label>
+            <input type="file" name="myfile" accept="image/png, image/jpeg"></p>
+        <button type="submit">Add Location</button>
+    </body>
+</html>

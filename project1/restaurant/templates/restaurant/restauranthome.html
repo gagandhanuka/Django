@@ -1,0 +1,45 @@
+<html>
+        <head>
+                <title>Signup-Restaurant</title>
+                <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+           <style>
+                 .clear{margin:18px 0 0 0;}
+                 </style>
+             </head>
+    <body>
+            <body>
+                    <div class="jumbotron text-center" style="background-color:#00F3FF">
+                            <h1 class="text-white" style="font-weight: 600">Welcome to Admin Home</h1>
+                            <p class="text-white"style="font-weight: 600"></p>
+                    </div>    
+                    <div class="container-fluid" id="id2">  
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6">     
+                                <div style="border-style:solid;border-color:rgb(91, 218, 224);border-radius:12px">
+                                    <br><br>
+                                                <div class="row"> <div class="col-lg-3"></div>
+                                                <div class="col-lg-6">     
+                                                <form action="restaurant/addlocation" method="POST">{%csrf_token%}
+                                                <button type="submit"class="btn btn-info" style="height:100%;width:100%">Add Location</button></form></div></div><br>
+                                                <div class="row"> <div class="col-lg-3"></div>
+                                                <div class="col-lg-6">     <form action="http://127.0.0.1:8000/restaurant/viewloc/{{rid}}/" method="POST">{%csrf_token%}
+                                                <button class="btn btn-info" style="height:100%;width:100%">Show Location</button></form></div></div><br>
+                                                <div class="row">
+                                                        <div class="col-lg-3"></div>
+                                                        <div class="col-lg-6">     <form action="http://127.0.0.1:8000/restaurant/search/" method="POST">{%csrf_token%}
+                                                <button class="btn btn-info" style="height:100%;width:100%">Search Location</button></form></div><br></div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </body>
+</html>

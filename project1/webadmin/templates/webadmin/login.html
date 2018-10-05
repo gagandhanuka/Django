@@ -1,0 +1,50 @@
+<html>
+    <head>
+       <title>Login</title>
+       <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <style>
+        .clear{margin:18px 0 0 0;}
+        </style>
+    </head>
+    <body>
+            <div class="jumbotron text-center" style="background-color:#00F3FF">
+                    <h1 class="text-white" style="font-weight: 600">Welcome to login page</h1>
+                    <p class="text-white"style="font-weight: 600">Fill your credidentials and click on login button</p> 
+                  </div>
+                  <div class="container-fluid" id="id2">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6">
+                  <div style="background-color:#00F3FF;border-radius:12px">
+                <div id="id1">
+                    <form action="http://127.0.0.1:8000/check/" method="POST">
+                        {%csrf_token%}
+                  <div class="form-group">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-lg-12">
+        <label>Username</label><input type="text" class="form-control"placeholder="Username" id="user" name="user"></div></div></div></div>
+        <div class="form-group">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+        <label>Password</label><input type="password" class="form-control"placeholder="Password" id="pass" name="pass"></div></div></div></div>
+<div class="container-fluid">
+       <input type="radio" value="Admin" id="radioid1" name="radio"checked>Admin
+       <input type="radio" value="Restaurant" id="radioid2" name="radio">Restaurant
+  </div>
+        <div class="container-fluid"><div class="row"><div class="col-lg-4"></div><div class="col-lg-4">
+        <center><button class="btn btn-info" style="height:100%;width:100%"type="submit">Login</button></center></div></div></div><br>
+    </form></div></div>  
+        </div></div></div>
+        <center><h5 class="text-danger">{{message}}</h5></center>
+        <center>
+        <form action="restaurant/" method="POST">{%csrf_token%}
+        <b>Not have an account yet?&nbsp&nbsp</b><button class="btn btn-danger" type="submit">Signup</button>
+        </form></center>
+    </body>

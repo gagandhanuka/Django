@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Signup-Restaurant</title>
+        <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+   <style>
+         .clear{margin:18px 0 0 0;}
+         </style>
+     </head>
+     <body>
+            <div class="container-fluid">
+                    <div class="jumbotron text-center"style="background-color:#00F3FF"><h1 class="text-white" style="font-weight:600px">Signup-Restaurant</h1></div></div>
+                    
+         <form action="add/" method="POST" enctype="multipart/form-data">{%csrf_token%}
+            <div class="form-group">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-4">
+        <p><label for="username"><b>Username :</b></label>
+        <input placeholder="Username" name="username" class="form-control"id="username"></p></div></div></div></div>
+        <div class="form-group">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4">
+        <p><label for="password"><b>Password :</b></label>
+        <input placeholder="Password" type="password" name="password" class="form-control"id="password"></p></div></div></div></div>
+        <div class="form-group">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4">
+        <p><label for="email"><b>E-mail :</b></label>
+        <input placeholder="E-mail" type="email"class="form-control"name="email" id="email"></p></div></div></div></div>
+        <div class="form-group">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4"><p><label for="phn_no"><b>Phone No. :</b></label>
+        <input placeholder="Phone No." name="phn_no" class="form-control"id="phn_no"></p></div></div></div></div>
+        <div class="form-group">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4"><p><label for="owner"><b>Owner Name :</b></label>
+        <input placeholder="Owner Name" name="owner" class="form-control"id="owner"></p></div></div></div></div>
+        <div class="container-fluid">
+        <button type="submit"class="btn btn-info" style="width:18%">Create New Account</button></div></form> 
+     </body>
+</html>

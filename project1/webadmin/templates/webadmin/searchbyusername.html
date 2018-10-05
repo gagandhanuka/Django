@@ -1,0 +1,45 @@
+<html>
+        <head>
+                <title> Employee</title>
+                <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+           <style>
+                 .clear{margin:18px 0 0 0;}
+                 </style>
+             </head>
+        <body>
+                <div class="container-fluid">
+                        <div class="jumbotron text-center"style="background-color:#00F3FF"><h1 class="text-white" style="font-weight:600px">Search Restaurant</h1></div></div>
+                        <div class="form-group">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label>Restaurant Username:</label><input id="id1"class="form-control"name="rname1" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                                $("#id1").keyup(function(){
+                                       $.ajax({
+                                           
+                                           url: "./search_restbyname",
+                                           type:'POST',
+                                           headers: {'X-CSRFToken': '{{ csrf_token }}'},
+                                           data:{ rname: $('#id1').val()},
+                                            success: function(result){
+                             
+                                          $("#div1").html(result);
+                                       }});
+                                   })
+                       
+                               </script>
+                    <div class="clear"></div>
+                    <div class="container-fluid">
+                    <div id="div1"></div></div>
+        </body>
+</html>
